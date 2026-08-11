@@ -1,75 +1,25 @@
-﻿int A = int.Parse(Console.ReadLine()!);
-int B = int.Parse(Console.ReadLine()!);
-int C = int.Parse(Console.ReadLine()!);
-int D = int.Parse(Console.ReadLine()!);
-int E = int.Parse(Console.ReadLine()!);
-int totalpares = 0;
-int totalimpares = 0;
-int totalpositivos = 0;
-int totalnegativos = 0;
+﻿int totalfora = 0;
+int totaldentro = 0;
+int N = int.Parse(Console.ReadLine());
 
-if (A % 2 == 0) {
-    totalpares++;
-} else if (A % 2 != 0) {
-    totalimpares++;
+int[] X = new int[N];
+
+for (int i = 0; i < N; i++)
+{
+    X[i] = int.Parse(Console.ReadLine());
 }
 
-if (B % 2 == 0) {
-    totalpares++;
-} else if (B % 2 != 0) {
-    totalimpares++;
+for (int i = 0; i < N; i++)
+{
+    if (X[i] > 10 && X[i] < 20)
+    {
+        totaldentro++;
+    }
+    else
+    {
+        totalfora++;
+    }
 }
 
-if (C % 2 == 0) {
-    totalpares++;
-} else if (C % 2 != 0) {
-    totalimpares++;
-}
-
-if (D % 2 == 0) {
-    totalpares++;
-} else if (D % 2 != 0) {
-    totalimpares++;
-}
-
-if (E % 2 == 0) {
-    totalpares++;
-} else if (E % 2 != 0) {
-    totalimpares++;
-}
-
-if (A > 0) {
-    totalpositivos++;
-} else if (A < 0) {
-    totalnegativos++;
-}
-
-if (B > 0) {
-    totalpositivos++;
-} else if (B < 0) {
-    totalnegativos++;
-}
-
-if (C > 0) {
-    totalpositivos++;
-} else if (C < 0) {
-    totalnegativos++;
-}
-
-if (D > 0) {
-    totalpositivos++;
-} else if (D < 0) {
-    totalnegativos++;
-}
-
-if (E > 0) {
-    totalpositivos++;
-} else if (E < 0) {
-    totalnegativos++;
-}   
-
-
-Console.WriteLine($"{totalpares} valores pares");
-Console.WriteLine($"{totalimpares} valores impares");
-Console.WriteLine($"{totalpositivos} valores positivos");
-Console.WriteLine($"{totalnegativos} valores negativos");
+Console.WriteLine($"{totaldentro} in");
+Console.WriteLine($"{totalfora} out");
