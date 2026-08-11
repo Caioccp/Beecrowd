@@ -1,25 +1,16 @@
-﻿int totalfora = 0;
-int totaldentro = 0;
-int N = int.Parse(Console.ReadLine());
+﻿int[] valores = new int[100];
+int maior = valores[0];
+int posicao = 0;
 
-int[] X = new int[N];
-
-for (int i = 0; i < N; i++)
+for (int i = 0; i < valores.Length; i++)
 {
-    X[i] = int.Parse(Console.ReadLine());
-}
-
-for (int i = 0; i < N; i++)
-{
-    if (X[i] > 10 && X[i] < 20)
+    valores[i] = int.Parse(Console.ReadLine());
+    if (valores[i] > maior)
     {
-        totaldentro++;
-    }
-    else
-    {
-        totalfora++;
+        maior = valores[i];
+        posicao = i + 1;
     }
 }
 
-Console.WriteLine($"{totaldentro} in");
-Console.WriteLine($"{totalfora} out");
+Console.WriteLine(maior);
+Console.WriteLine(posicao);
