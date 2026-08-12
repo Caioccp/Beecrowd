@@ -1,16 +1,13 @@
-﻿int[] valores = new int[100];
-int maior = valores[0];
-int posicao = 0;
+﻿int I = int.Parse(Console.ReadLine());
+char a = 'a';
+string total = "";
 
-for (int i = 0; i < valores.Length; i++)
+while (I < 1 || I > 10000)
 {
-    valores[i] = int.Parse(Console.ReadLine());
-    if (valores[i] > maior)
-    {
-        maior = valores[i];
-        posicao = i + 1;
-    }
+    I = int.Parse(Console.ReadLine());
 }
 
-Console.WriteLine(maior);
-Console.WriteLine(posicao);
+total = new string('a', I);
+
+Console.WriteLine($"Feliz nat{total}l!");
+
