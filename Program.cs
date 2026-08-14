@@ -1,13 +1,13 @@
-﻿using System; 
+﻿using System;
 
 class URI {
 
     static void Main(string[] args) { 
 
-        int C = int.Parse(Console.ReadLine());
+        int L = int.Parse(Console.ReadLine());
 
-        while (C < 0 || C > 11) {
-            C = int.Parse(Console.ReadLine());
+        while (L < 0 || L > 11) {
+            L = int.Parse(Console.ReadLine());
         }
 
         char T = char.Parse(Console.ReadLine());
@@ -26,8 +26,8 @@ class URI {
             
         double soma = 0;
             
-        for (int linha = 0; linha < 12; linha++) {
-                soma = soma + matriz[linha, C];
+        for (int coluna = 0; coluna < 12; coluna++) {
+                soma = soma + matriz[L, coluna];
         }
           
         if (T == 'M') {
