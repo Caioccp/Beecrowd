@@ -1,32 +1,39 @@
-﻿using System;
+﻿using System; 
 
-class URI
-{
-    static void Main(string[] args)
-    {
-        int N = int.Parse(Console.ReadLine());
-        int[] X = new int[N];
+class URI {
 
-        string[] entrada = Console.ReadLine().Split(' ');
+    static void Main(string[] args) { 
 
-        for (int i = 0; i < N; i++)
-        {
-            X[i] = int.Parse(entrada[i]);
+        int C = int.Parse(Console.ReadLine());
+
+        while (C < 0 || C > 11) {
+            C = int.Parse(Console.ReadLine());
         }
 
-        int menor = X[0];
-        int posicao = 0;
+        char T = char.Parse(Console.ReadLine());
 
-        for (int i = 1; i < N; i++)
-        {
-            if (X[i] < menor)
-            {
-                menor = X[i];
-                posicao = i;
+        while (T != 'S' && T != 'M') {
+            T = char.Parse(Console.ReadLine());
+        }
+
+        double[,] matriz = new double[12, 12];
+
+        for (int linha = 0; linha < 12; linha++) {
+            for (int coluna = 0; coluna < 12; coluna++) {
+                matriz[linha, coluna] = double.Parse(Console.ReadLine());
             }
         }
-
-        Console.WriteLine($"Menor valor: {menor}");
-        Console.WriteLine($"Posicao: {posicao}");
+            
+        double soma = 0;
+            
+        for (int linha = 0; linha < 12; linha++) {
+                soma = soma + matriz[linha, C];
+        }
+          
+        if (T == 'M') {
+                soma = soma / 12.0;
+        }
+            
+        Console.WriteLine($"{soma:F1}");
     }
 }
